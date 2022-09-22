@@ -143,4 +143,9 @@ class SpingDataJpaApplicationTests {
     void cau27NhanVien() {
         System.out.println("Số lương phải trả cho các phi công" + nhanVienReponsitory.sumOfSalaryPilot());
     }
+
+    @Test
+    void cau28NhanVien() {
+        chuyenBayRepository.lstCBCau28().forEach(System.out::println);
+    }
 }

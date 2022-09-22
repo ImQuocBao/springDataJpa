@@ -25,4 +25,8 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
     @Query(value = "select COUNT(*) as sochuyenbay from chuyenbay where gadi = 'sgn'", nativeQuery = true)
     public int lstCBBySGN();
 
+    // 28. Tìm các chuyến bay có thể được thực hiện bởi tất cả các loại máy bay
+    // Boeing.
+    @Query(value = "SELECT DISTINCT cb.* FROM CHUYENBAY cb, MAYBAY mb WHERE DoDai < TamBay AND Loai Like 'Boeing%'", nativeQuery = true)
+    public List<ChuyenBay> lstCBCau28();
 }
