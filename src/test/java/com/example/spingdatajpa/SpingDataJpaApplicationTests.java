@@ -34,4 +34,9 @@ class SpingDataJpaApplicationTests {
         nhanVienReponsitory.findEmpsBySalaryLT10000().forEach(System.out::println);
     }
 
+    @Test
+    void cau4ChuyenBay() {
+        chuyenBayRepository.lstCBBy10kand8k().forEach(System.out::println);
+    }
+
 }
