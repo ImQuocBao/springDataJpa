@@ -93,4 +93,10 @@ class SpingDataJpaApplicationTests {
     void cau15NhanVien() {
         nhanVienReponsitory.findNameEmpUseBoeing().forEach(e -> System.out.println(e));
     }
+
+    @Test
+    void cau16MayBay() {
+        mayBayReponsitory.findPlaneHavePilot().forEach(e -> System.out.println(e));
+    }
+
 }

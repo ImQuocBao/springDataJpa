@@ -29,4 +29,9 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "select * from maybay where TamBay >= 4168", nativeQuery = true)
   public List<MayBay> lstCBByA320();
 
+  // 16.Với mỗi loại máy bay có phi công lái cho biết mã số, loại máy báy và tổng
+  // số phi công có thể lái loại máy bay đó.
+  @Query(value = "select Loai from maybay\n" +
+      "where exists(select * from chungnhan cn join maybay m on m.MaMB = cn.MaMB)", nativeQuery = true)
+  public List<String> findPlaneHavePilot();
 }
