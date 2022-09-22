@@ -79,4 +79,9 @@ class SpingDataJpaApplicationTests {
         mayBayReponsitory.findMaMBUsedByNguyen().forEach(e -> System.out.println(e));
     }
 
+    @Test
+    void cau13ChuyenBay() {
+        mayBayReponsitory.lstCBByVN280().forEach(System.out::println);
+    }
+
 }

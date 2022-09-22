@@ -24,4 +24,5 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
     // 6. Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
     @Query(value = "select COUNT(*) as sochuyenbay from chuyenbay where gadi = 'sgn'", nativeQuery = true)
     public int lstCBBySGN();
+
 }
