@@ -54,4 +54,9 @@ class SpingDataJpaApplicationTests {
         System.out.println("so maybay boeing : " + mayBayReponsitory.countMayBayLikeBoeing());
     }
 
+    @Test
+    void cau8NhanVien() {
+        System.out.println("so lương của nhân viên : " + nhanVienReponsitory.sumOfSalaryPaidEmp());
+    }
+
 }

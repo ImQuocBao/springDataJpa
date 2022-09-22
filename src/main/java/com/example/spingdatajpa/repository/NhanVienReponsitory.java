@@ -13,4 +13,8 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   @Query(value = "select * from nhanvien where luong < 10000", nativeQuery = true)
   public List<NhanVien> findEmpsBySalaryLT10000();
 
+  // 8. Cho biết tổng số lương phải trả cho các nhân viên..
+  @Query(value = "select sum(luong) as luong from nhanvien ", nativeQuery = true)
+  public Long sumOfSalaryPaidEmp();
+
 }
