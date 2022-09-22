@@ -133,4 +133,9 @@ class SpingDataJpaApplicationTests {
     void cau25NhanVien() {
         nhanVienReponsitory.findEmpsNotPilot().forEach(System.out::println);
     }
+
+    @Test
+    void cau26NhanVien() {
+        nhanVienReponsitory.findEmpsTopSalary().forEach(System.out::println);
+    }
 }
