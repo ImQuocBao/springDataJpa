@@ -42,4 +42,12 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   @Query(value = "SELECT cn.MaNV, TamBay FROM NHANVIEN nv, MAYBAY mb, CHUNGNHAN cn WHERE nv.MaNV = cn.MaNV AND mb.MaMB = cn.MaMB AND cn.MaNV IN (SELECT nv.MaNV FROM NHANVIEN nv, CHUNGNHAN cn WHERE nv.MaNV = cn.MaNV GROUP BY NV.MaNV HAVING COUNT(MAMB) > 3)", nativeQuery = true)
   public List<String> findEmpsCau23();
 
+  // 24. Với mỗi phi công cho biết mã số phi công và tổng số loại máy bay mà phi
+  // công đó có thể lái.
+  @Query(value = "SELECT nv.MaNV, Ten,COUNT(mb.MaMB) FROM NHANVIEN " +
+      "nv, CHUNGNHAN cn, MAYBAY mb WHERE nv.MaNV = cn.MaNV AND "
+      + "mb.MaMB = cn.MaMB AND nv.MANV IN(SELECT MaNV FROM CHUNGNHAN) "
+      + "GROUP BY nv.MaNV,Ten", nativeQuery = true)
+  public List<String> findEmpsCau24();
+
 }

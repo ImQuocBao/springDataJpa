@@ -123,4 +123,9 @@ class SpingDataJpaApplicationTests {
     void cau23NhanVien() {
         nhanVienReponsitory.findEmpsCau23().forEach(System.out::println);
     }
+
+    @Test
+    void cau24NhanVien() {
+        nhanVienReponsitory.findEmpsCau24().forEach(System.out::println);
+    }
 }
