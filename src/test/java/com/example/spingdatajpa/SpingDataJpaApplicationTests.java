@@ -68,4 +68,9 @@ class SpingDataJpaApplicationTests {
     void cau10NhanVien() {
         nhanVienReponsitory.findEmpCanFlyWith747().forEach(System.out::println);
     }
+
+    @Test
+    void cau11MayBay() {
+        mayBayReponsitory.findMaMBUsedByNguyen().forEach(e -> System.out.println(e));
+    }
 }

@@ -17,4 +17,7 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "select count(*) from maybay where loai like 'Boeing%'", nativeQuery = true)
   public int countMayBayLikeBoeing();
 
+  // 11. Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái
+  @Query(value = "select mb.mamb from nhanvien nv JOIN chungnhan cn on nv.MaNV = cn.manv Join maybay mb on mb.MaMB = cn.MaMB where nv.ten like 'nguyen%' ", nativeQuery = true)
+  public List<String> findMaMBUsedByNguyen();
 }
