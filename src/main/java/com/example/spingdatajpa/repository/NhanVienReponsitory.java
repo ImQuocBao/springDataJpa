@@ -17,4 +17,8 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   @Query(value = "select sum(luong) as luong from nhanvien ", nativeQuery = true)
   public Long sumOfSalaryPaidEmp();
 
+  // 9. Cho biết mã số của các phi công lái máy báy Boeing.
+  @Query(value = "select nv.manv from nhanvien nv JOIN chungnhan cn on nv.MaNV = cn.manv Join maybay mb on mb.MaMB = cn.MaMB where mb.Loai like 'Boeing%' group by nv.MaNV, nv.Ten", nativeQuery = true)
+  public List<String> findPilotInBoeing();
+
 }

@@ -59,4 +59,9 @@ class SpingDataJpaApplicationTests {
         System.out.println("so lương của nhân viên : " + nhanVienReponsitory.sumOfSalaryPaidEmp());
     }
 
+    @Test
+    void cau9NhanVien() {
+        nhanVienReponsitory.findPilotInBoeing().forEach(e -> System.out.println(e));
+    }
+
 }
