@@ -1,7 +1,6 @@
 package com.example.spingdatajpa;
 
-import com.example.spingdatajpa.repository.ChuyenBayRepository;
-import com.example.spingdatajpa.repository.MayBayReponsitory;
+import com.example.spingdatajpa.repository.*;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,8 @@ class SpingDataJpaApplicationTests {
     ChuyenBayRepository chuyenBayRepository;
     @Autowired
     MayBayReponsitory mayBayReponsitory;
+    @Autowired
+    NhanVienReponsitory nhanVienReponsitory;
 
     @Test
     void cau1DaD() {
@@ -26,6 +27,11 @@ class SpingDataJpaApplicationTests {
     @Test
     void cau2MayBay() {
         mayBayReponsitory.lstMaybayThan10K().forEach(System.out::println);
+    }
+
+    @Test
+    void cau3NhanVien() {
+        nhanVienReponsitory.findEmpsBySalaryLT10000().forEach(System.out::println);
     }
 
 }
