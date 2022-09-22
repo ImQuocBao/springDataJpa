@@ -24,4 +24,8 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   // 10. Cho biết các nhân viên có thể lái máy bay có mã số 747
   @Query(value = "select * from nhanvien nv JOIN chungnhan cn on nv.MaNV = cn.manv Join maybay mb on mb.MaMB = cn.MaMB where mb.mamb=747", nativeQuery = true)
   public List<NhanVien> findEmpCanFlyWith747();
+
+  // 12. Cho biết mã số của các phi công vừa lái được Boeing vừa lái được Airbus
+  @Query(value = "SELECT * FROM nhanvien WHERE MaNV In (select cn.MaNV from chungnhan cn inner join maybay mb on mb.MaMB = cn.MaMB where mb.Loai like '%Airbus%' or mb.Loai like '%Boeing%')", nativeQuery = true)
+  public List<NhanVien> findNameEmpCanUseBoeAndAir();
 }

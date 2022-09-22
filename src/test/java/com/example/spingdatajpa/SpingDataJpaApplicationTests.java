@@ -73,4 +73,10 @@ class SpingDataJpaApplicationTests {
     void cau11MayBay() {
         mayBayReponsitory.findMaMBUsedByNguyen().forEach(e -> System.out.println(e));
     }
+
+    @Test
+    void cau12NhanVien() {
+        mayBayReponsitory.findMaMBUsedByNguyen().forEach(e -> System.out.println(e));
+    }
+
 }
