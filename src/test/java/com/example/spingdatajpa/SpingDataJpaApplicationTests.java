@@ -113,4 +113,9 @@ class SpingDataJpaApplicationTests {
     void cau21MayBay() {
         mayBayReponsitory.lstMayBayFlyInBefore12h().forEach(System.out::println);
     }
+
+    @Test
+    void cau22NhanVien() {
+        nhanVienReponsitory.find3EmpCanDrive3TypeOfPlane().forEach(System.out::println);
+    }
 }
