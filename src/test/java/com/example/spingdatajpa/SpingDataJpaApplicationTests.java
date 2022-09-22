@@ -84,4 +84,9 @@ class SpingDataJpaApplicationTests {
         mayBayReponsitory.lstCBByVN280().forEach(System.out::println);
     }
 
+    @Test
+    void cau14ChuyenBay() {
+        mayBayReponsitory.lstCBByA320().forEach(System.out::println);
+    }
+
 }

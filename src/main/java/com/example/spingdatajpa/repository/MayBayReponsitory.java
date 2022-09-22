@@ -24,4 +24,9 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   // 13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280
   @Query(value = "select * from maybay where TamBay >= 11979", nativeQuery = true)
   public List<MayBay> lstCBByVN280();
+
+  // 14. Cho biết các loại máy bay có thể thực hiện chuyến bay Airbus A320
+  @Query(value = "select * from maybay where TamBay >= 4168", nativeQuery = true)
+  public List<MayBay> lstCBByA320();
+
 }
