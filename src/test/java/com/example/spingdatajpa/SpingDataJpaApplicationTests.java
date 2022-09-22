@@ -99,4 +99,8 @@ class SpingDataJpaApplicationTests {
         mayBayReponsitory.findPlaneHavePilot().forEach(e -> System.out.println(e));
     }
 
+    @Test
+    void cau17MayBay() {
+        mayBayReponsitory.lstMayBayCoTamBayLonHon10000().forEach(e -> System.out.println(e));
+    }
 }

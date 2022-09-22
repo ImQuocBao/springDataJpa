@@ -34,4 +34,10 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "select Loai from maybay\n" +
       "where exists(select * from chungnhan cn join maybay m on m.MaMB = cn.MaMB)", nativeQuery = true)
   public List<String> findPlaneHavePilot();
+
+  // 17. Giả sử một hành khách muốn đi thẳng từ ga A đến ga B rồi quay trở về ga A
+  // Cho biết các đường bay nào có thể đáp ứng yêu cầu này.
+  @Query(value = "select * from maybay where TamBay > 10000", nativeQuery = true)
+  public List<MayBay> lstMayBayCoTamBayLonHon10000();
+
 }
