@@ -59,4 +59,8 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   @Query(value = "SELECT MaNV, Luong FROM NHANVIEN " +
       "WHERE MANV IN(SELECT MaNV FROM CHUNGNHAN) AND Luong IN (SELECT MAX(Luong) FROM NHANVIEN) ", nativeQuery = true)
   public List<String> findEmpsTopSalary();
+
+  // 27. Cho biết tổng số lương phải trả cho các phi công.
+  @Query(value = "SELECT SUM(LUONG) FROM NHANVIEN", nativeQuery = true)
+  public int sumOfSalaryPilot();
 }

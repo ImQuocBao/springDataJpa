@@ -138,4 +138,9 @@ class SpingDataJpaApplicationTests {
     void cau26NhanVien() {
         nhanVienReponsitory.findEmpsTopSalary().forEach(System.out::println);
     }
+
+    @Test
+    void cau27NhanVien() {
+        System.out.println("Số lương phải trả cho các phi công" + nhanVienReponsitory.sumOfSalaryPilot());
+    }
 }
