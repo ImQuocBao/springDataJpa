@@ -49,4 +49,9 @@ class SpingDataJpaApplicationTests {
         System.out.println("so chuyen bay : " + chuyenBayRepository.lstCBBySGN());
     }
 
+    @Test
+    void cau7MayBay() {
+        System.out.println("so maybay boeing : " + mayBayReponsitory.countMayBayLikeBoeing());
+    }
+
 }

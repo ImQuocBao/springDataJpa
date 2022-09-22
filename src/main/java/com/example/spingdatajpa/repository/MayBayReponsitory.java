@@ -13,4 +13,8 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "select * from maybay where TamBay > 10000", nativeQuery = true)
   public List<MayBay> lstMaybayThan10K();
 
+  // 7. Có bao nhiêu loại máy báy Boeing.
+  @Query(value = "select count(*) from maybay where loai like 'Boeing%'", nativeQuery = true)
+  public int countMayBayLikeBoeing();
+
 }
