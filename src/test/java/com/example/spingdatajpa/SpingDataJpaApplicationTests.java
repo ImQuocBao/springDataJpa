@@ -103,4 +103,9 @@ class SpingDataJpaApplicationTests {
     void cau17MayBay() {
         mayBayReponsitory.lstMayBayCoTamBayLonHon10000().forEach(e -> System.out.println(e));
     }
+
+    @Test
+    void cau19MayBay() {
+        System.out.println(mayBayReponsitory.lstMayBayFlyBefore12h());
+    }
 }

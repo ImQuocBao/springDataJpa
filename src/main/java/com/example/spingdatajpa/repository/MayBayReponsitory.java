@@ -40,4 +40,8 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "select * from maybay where TamBay > 10000", nativeQuery = true)
   public List<MayBay> lstMayBayCoTamBayLonHon10000();
 
+  // 19. Cho biết danh sách các chuyến bay có thể khởi hành trước 12:00
+  @Query(value = "SELECT COUNT( * ) AS tong FROM CHUYENBAY WHERE GioDi < '12:00'", nativeQuery = true)
+  public int lstMayBayFlyBefore12h();
+
 }
