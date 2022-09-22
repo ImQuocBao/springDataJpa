@@ -64,4 +64,8 @@ class SpingDataJpaApplicationTests {
         nhanVienReponsitory.findPilotInBoeing().forEach(e -> System.out.println(e));
     }
 
+    @Test
+    void cau10NhanVien() {
+        nhanVienReponsitory.findEmpCanFlyWith747().forEach(System.out::println);
+    }
 }
