@@ -50,4 +50,8 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
       + "GROUP BY nv.MaNV,Ten", nativeQuery = true)
   public List<String> findEmpsCau24();
 
+  // 25. Tìm các nhân viên không phải là phi công.
+  @Query(value = "SELECT MaNV, Ten FROM NHANVIEN " +
+      "WHERE MANV NOT IN(SELECT MaNV FROM CHUNGNHAN) ", nativeQuery = true)
+  public List<String> findEmpsNotPilot();
 }
