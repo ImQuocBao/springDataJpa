@@ -89,4 +89,8 @@ class SpingDataJpaApplicationTests {
         mayBayReponsitory.lstCBByA320().forEach(System.out::println);
     }
 
+    @Test
+    void cau15NhanVien() {
+        nhanVienReponsitory.findNameEmpUseBoeing().forEach(e -> System.out.println(e));
+    }
 }
