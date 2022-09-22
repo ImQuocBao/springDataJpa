@@ -44,4 +44,9 @@ public interface MayBayReponsitory extends JpaRepository<MayBay, Long> {
   @Query(value = "SELECT COUNT( * ) AS tong FROM CHUYENBAY WHERE GioDi < '12:00'", nativeQuery = true)
   public int lstMayBayFlyBefore12h();
 
+  // 21. Với mỗi địa điểm xuất phát cho biết có bao nhiêu chuyến bay có thể khởi
+  // hành trước 12:00.
+  @Query(value = "SELECT * FROM CHUYENBAY WHERE GioDi < '12:00'GROUP BY GaDi", nativeQuery = true)
+  public List<String> lstMayBayFlyInBefore12h();
+
 }

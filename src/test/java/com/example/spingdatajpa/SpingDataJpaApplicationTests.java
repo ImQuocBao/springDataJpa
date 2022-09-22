@@ -108,4 +108,9 @@ class SpingDataJpaApplicationTests {
     void cau19MayBay() {
         System.out.println(mayBayReponsitory.lstMayBayFlyBefore12h());
     }
+
+    @Test
+    void cau21MayBay() {
+        mayBayReponsitory.lstMayBayFlyInBefore12h().forEach(System.out::println);
+    }
 }
