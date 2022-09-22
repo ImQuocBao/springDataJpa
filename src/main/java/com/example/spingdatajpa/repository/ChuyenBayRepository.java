@@ -16,4 +16,9 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
     // 8.000km.
     @Query(value = "select * from chuyenbay where dodai > 8000 and dodai < 10000", nativeQuery = true)
     public List<ChuyenBay> lstCBBy10kand8k();
+
+    // 5. Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
+    @Query(value = "select * from chuyenbay where gadi = 'sgn' and gaden ='bmv'", nativeQuery = true)
+    public List<ChuyenBay> lstCBBySGNToBMV();
+
 }

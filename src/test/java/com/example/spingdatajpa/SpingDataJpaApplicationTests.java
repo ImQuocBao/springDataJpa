@@ -39,4 +39,9 @@ class SpingDataJpaApplicationTests {
         chuyenBayRepository.lstCBBy10kand8k().forEach(System.out::println);
     }
 
+    @Test
+    void cau5ChuyenBay() {
+        chuyenBayRepository.lstCBBySGNToBMV().forEach(System.out::println);
+    }
+
 }
