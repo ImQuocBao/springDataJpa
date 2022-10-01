@@ -1,4 +1,5 @@
 package com.example.spingdatajpa.entity;
+
 import lombok.*;
 
 import javax.persistence.Column;
@@ -15,26 +16,27 @@ import java.io.Serializable;
 @Getter
 @Builder
 @Table(name = "chuyenbay")
+@ToString
 public class ChuyenBay implements Serializable {
     @Id
     @Column(name = "MaCB", unique=true)
     private String MaCB;
 
-    @Column(name = "GaDi")
-    private String GaDi;
+    @Column(name = "gaDi")
+    private String gaDi;
 
-    @Column(name = "GaDen")
-    private String GaDen;
+    @Column(name = "gaDen")
+    private String gaDen;
 
-    @Column(name = "DoDai")
-    private Integer DoDai;
+    @Column(name = "doDai")
+    private Integer doDai;
 
-    @Column(name = "GioDi")
-    private Integer GioDi;
+    @Column(name = "gioDi")
+    private Integer gioDi;
 
-    @Column(name = "GioDen")
-    private Integer GioDen;
+    @Column(name = "gioDen")
+    private Integer gioDen;
 
-    @Column(name = "ChiPhi")
-    private Integer ChiPhi;
+    @Column(name = "chiPhi")
+    private Integer chiPhi;
 }

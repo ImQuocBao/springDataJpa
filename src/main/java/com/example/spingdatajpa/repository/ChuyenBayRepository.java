@@ -2,12 +2,12 @@ package com.example.spingdatajpa.repository;
 
 import com.example.spingdatajpa.entity.ChuyenBay;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
+public interface ChuyenBayRepository extends CrudRepository<ChuyenBay, String> {
     // 1. Cho biết các chuyến bay đi Đà Lạt (DAD)
     @Query(value = "select * from chuyenbay where GaDen ='DaD'", nativeQuery = true)
     public List<ChuyenBay> lstDad();

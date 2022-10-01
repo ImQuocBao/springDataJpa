@@ -53,12 +53,12 @@ public interface NhanVienReponsitory extends JpaRepository<NhanVien, String> {
   // 25. Tìm các nhân viên không phải là phi công.
   @Query(value = "SELECT MaNV, Ten FROM NHANVIEN " +
       "WHERE MANV NOT IN(SELECT MaNV FROM CHUNGNHAN) ", nativeQuery = true)
-  public List<String> findEmpsNotPilot();
+  public List<NhanVien> findEmpsNotPilot();
 
   // 26. Cho biết mã số của các nhân viên có lương cao nhất.
-  @Query(value = "SELECT MaNV, Luong FROM NHANVIEN " +
+  @Query(value = "SELECT * FROM NHANVIEN " +
       "WHERE MANV IN(SELECT MaNV FROM CHUNGNHAN) AND Luong IN (SELECT MAX(Luong) FROM NHANVIEN) ", nativeQuery = true)
-  public List<String> findEmpsTopSalary();
+  public List<NhanVien> findEmpsTopSalary();
 
   // 27. Cho biết tổng số lương phải trả cho các phi công.
   @Query(value = "SELECT SUM(LUONG) FROM NHANVIEN", nativeQuery = true)

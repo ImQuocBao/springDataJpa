@@ -14,12 +14,12 @@ import java.io.Serializable;
 @Table(name = "nhanvien")
 public class NhanVien implements Serializable {
     @Id
-    @Column(name = "MaNV")
+    @Column(name = "maNV")
     private String MaNV;
 
-    @Column(name = "Ten")
+    @Column(name = "ten")
     private String Ten;
 
-    @Column(name = "Luong")
+    @Column(name = "luong")
     private Integer Luong;
 }
